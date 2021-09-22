@@ -20,8 +20,8 @@ fg1 = folium.FeatureGroup(name="My Map")
 
 for name, elev, lat, lon in zip(df['NAME'], df['ELEV'], df['LAT'], df['LON']):
     iframe = folium.IFrame(html=html.format(name,name,elev), width=200, height=100)
-    fg1.add_child(folium.CircleMarker(location=[lat, lon], popup=folium.Popup(iframe), radius=8,
-    color=color_generator(elev), fill=True, fill_color=color_generator(elev), fill_opacity=1))
+    fg1.add_child(folium.CircleMarker(location=[lat, lon], popup=folium.Popup(iframe), radius=6,
+    color=color_generator(elev), fill=True, fill_color=color_generator(elev), opacity=0.7, fill_opacity=0.7))
     map.add_child(fg1)
 
 map.save("Map1.html")
